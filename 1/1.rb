@@ -41,7 +41,9 @@ if response.key?('person')
 
   if response.key?('personal_data') and response['personal_data'].key?('name')
 
-    fields = response['personal_data'].keys.concat(response.keys.find_all { |item| item != 'personal_data' }).collect(&:to_sym)
+    data = response.select { |key, value| key != 'personal_data' }
+
+    fields = response['personal_data'].keys.concat(data.keys).collect(&:to_sym)
 
     person_object = Struct.new("Person", *fields)
 
@@ -63,9 +65,7 @@ if response.key?('person')
 
     end
 
-    data = (response.select { |key, value| key != 'personal_data' }).values
-
-    person = person_object.new(*response["personal_data"].values.concat(data))
+    person = person_object.new(*response["personal_data"].values.concat(data.values))
 
     person.instance_eval do
 
