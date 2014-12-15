@@ -1,88 +1,139 @@
 require 'json'
 
-response = '[{"name":"Person1","email":"person1@gmail.com","sex":"male","dob":"12\/12\/1990","skype":"skype.person1","phone":"38091211212","website":"person1.blogspot.com","avatar":"person1.png","country":"Ukraine","city":"Cherkassy","university":"KNP"},{"name":"Person2","email":"person2@gmail.com","sex":"female","phone":"38091211114"},{"name":"Person3","dob":"12\/12\/1990","phone":"38091211413","website":"person1.blogspot.com"},{"name":"Person4","skype":"skype.person1","phone":"38091211212","website":"person1.blogspot.com"},{"name":"Person5","email":"person5@gmail.com","sex":"male","country":"Ukraine","city":"Cherkassy","university":"KNP"},{"email":"person6@gmail.com","sex":"male","country":"Ukraine","city":"Cherkassy","university":"KNP"}]'
+module SocialProfiles
+
+  module ClassMethods
+
+    def social_profiles(*profiles)
+
+      profiles.each do |profile|
+
+        define_method "#{profile}_account?" do
+
+          if self.include? social_profiles and self.social_profiles.kind_of?(Array) and self.social_profiles.count
+            self.social_profiles.any? { |p| /https?:\/\/(www\.)?#{profile.to_s.downcase}/=~p.downcase }
+          else
+            false
+          end
+
+        end
+
+      end
+
+    end
+
+  end
+
+  #avoid extend and include
+  def self.included(base)
+    base.extend(ClassMethods)
+  end
+
+end
+
+response = '{"person":{"personal_data":{"name": "John Smith", "gender":"male", "age":56},"social_profiles":["https://facebook.com","http://twitter.com","http://www.linkedin.com"],"additional_info":{"email":"person@gmail.com", "hobby":["pubsurfing","drinking","hiking"], "pets":[{"name":"Mittens","species":"Felis silvestris catus"}]}}}'
 
 response = JSON.parse(response)
 
-person = Struct.new('Person', :name)
+if response.key?('person')
 
-person.class_eval do
-  def call_person_method method
-    unless (/_person$/=~method).nil?
-      if self.respond_to? method
-        self.send(method)
+  response = response['person']
+
+  if response.key?('personal_data') and response['personal_data'].key?('name')
+
+    fields = response['personal_data'].keys.concat(response.keys.find_all { |item| item != 'personal_data' }).collect(&:to_sym)
+
+    person_object = Struct.new("Person", *fields)
+
+    person_object.class_eval do
+
+      include SocialProfiles
+
+      def get_person_property(property)
+
+        if self.members.any? { |m| m == property.to_sym }
+          self.send(property.to_sym)
+        else
+          nil
+        end
+
+      end
+
+      social_profiles :facebook, :twitter, :vk, :linkedin
+
+    end
+
+    data = (response.select { |key, value| key != 'personal_data' }).values
+
+    person = person_object.new(*response["personal_data"].values.concat(data))
+
+    person.instance_eval do
+
+      def adult?
+
+        self.get_person_property('age').to_i >= 18
+
+      end
+
+      def have_hobbies?
+
+        !self.get_additional_info('hobby').empty?
+
+      end
+
+      def have_pets?
+
+        !self.get_additional_info('pets').empty?
+
+      end
+
+      def get_additional_info(property)
+
+        info = self.get_person_property('additional_info')
+
+        if info.nil?
+          false
+        elsif info.key?(property)
+          info[property]
+        else
+          false
+        end
+
+      end
+
+    end
+
+    puts 'Person'
+    puts 'Name: ' << person.get_person_property('name').to_s
+    puts 'Gender: ' << person.get_person_property('gender').to_s
+    puts 'Age: ' << person.get_person_property('age').to_s
+    puts 'Is adult: ' << person.adult?.to_s
+    puts 'Email: ' << person.get_additional_info('email').to_s
+
+    puts 'Have hobbies: ' << person.have_hobbies?.to_s
+
+    if person.have_hobbies?
+      puts 'Hobbies: ' << person.get_additional_info('hobby').join(', ')
+    end
+
+    puts 'Have pets: ' << person.have_pets?.to_s
+
+    if person.have_pets?
+      puts 'Pets: '
+
+      person.get_additional_info('pets').each_with_index do |item, index|
+        if index > 0
+          puts '  ---------------------------------'
+        end
+
+        item.each { |key, value| puts '  ' << key.to_s.capitalize << ': ' << value.to_s }
       end
     end
+
+    puts 'Have Twitter account: ' << person.twitter_account?.to_s
+    puts 'Have Facebook account: ' << person.facebook_account?.to_s
+    puts 'Have VK account: ' << person.vk_account?.to_s
+    puts 'Have Linkedin account: ' << person.linkedin_account?.to_s
+
   end
-
-  def call_all_person_methods
-    self.singleton_methods.each do |method|
-      call_person_method method
-    end
-  end
-end
-
-persons = []
-
-response.each do |item|
-
-  next if item['name'].nil? || item['name'].strip.length == 0
-
-  p = person.new(item['name'].strip)
-
-  item.each do |key, value|
-
-    next if key == 'name'
-
-    p.define_singleton_method key do
-      instance_variable_get "@#{key}"
-    end
-
-    p.instance_variable_set "@#{key}", value
-
-    case key
-      when 'email' then
-        p.define_singleton_method 'send_email_person' do
-          puts 'Send email from ruby@gmail.com to ' + p.send(key)
-        end
-      when 'skype' then
-        p.define_singleton_method 'skype_call_person' do
-          puts 'Call from skype.ruby to ' + p.send(key)
-        end
-      when 'phone' then
-        p.define_singleton_method 'phone_call_person' do
-          puts 'Call from phone.ruby to ' + p.send(key)
-        end
-      when 'website' then
-        p.define_singleton_method 'visit_website_person' do
-          puts 'Visit website ' + p.send(key)
-        end
-      when 'avatar' then
-        p.define_singleton_method 'show_avatar_person' do
-          puts 'Show avatar ' + p.send(key)
-        end
-      else
-    end
-  end
-
-  persons.push(p)
-
-end
-
-persons.each do |p|
-
-  puts "===============================================#{p.name}======================================================="
-
-  p.instance_variables.each do |var|
-    puts var.to_s.gsub(/^@/, '').capitalize + ': ' + (p.instance_variable_get var).to_s
-  end
-
-  puts ''
-  puts 'Methods:'
-
-  p.call_all_person_methods
-
-  puts '==============================================================================================================='
-  puts ''
-
 end
