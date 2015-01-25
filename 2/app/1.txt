@@ -1,0 +1,126 @@
+@feed_id="tag:youtube.com,2008:videos",
+@updated_at=2015-01-23 23:26:50 UTC,
+@total_result_count=1000000,
+@offset=1,
+@max_result_count=1,
+#<YouTubeIt::Model::Video:0x8a83b8c
+    @video_id="tag:youtube.com,2008:video:DCf60INko9E",
+    @published_at=2013-04-01 16:11:06 UTC,
+    @updated_at=2015-01-22 15:01:38 UTC,
+    @uploaded_at=2013-04-01 16:11:06 UTC,
+    @recorded_at=nil,
+    @categories=[
+        #<YouTubeIt::Model::Category:0x8a20528
+            @term="Film",
+            @label="Film & Animation"
+        >
+    ],
+    @keywords=[],
+    @title="Crazy penguin HD",
+    @author=#<YouTubeIt::Model::Author:0x8a306d0 @name="toddler cartoon", @uri="http://gdata.youtube.com/feeds/api/users/WnuODgzj_sHincK0DL15oA">,
+    @description="Story about some crazy and funny penguins.",
+    @duration=1158,
+    @media_content=[
+        #<YouTubeIt::Model::Content:0x8a49aa4
+            @url="http://www.youtube.com/v/DCf60INko9E?version=3&f=videos&app=youtube_gdata",
+            @format=
+                #<YouTubeIt::Model::Video::Format:0x87d93c8 @format_code=5, @name=:swf>,
+            @duration=1158,
+            @mime_type="application/x-shockwave-flash",
+            @default=true
+        >,
+        #<YouTubeIt::Model::Content:0x8a495f4
+            @url="rtsp://r8---sn-4g57kuee.c.youtube.com/CiILENy73wIaGQnRo2SD0PonDBMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+            @format=
+                #<YouTubeIt::Model::Video::Format:0x87d93dc @format_code=1, @name=:rtsp>,
+            @duration=1158,
+            @mime_type="video/3gpp",
+            @default=false
+        >,
+        #<YouTubeIt::Model::Content:0x8a49040
+            @url="rtsp://r8---sn-4g57kuee.c.youtube.com/CiILENy73wIaGQnRo2SD0PonDBMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+            @format=
+                #<YouTubeIt::Model::Video::Format:0x87d93a0 @format_code=6, @name=:three_gpp>,
+            @duration=1158,
+            @mime_type="video/3gpp",
+            @default=false
+        >
+    ],
+    @player_url="http://www.youtube.com/watch?v=DCf60INko9E&feature=youtube_gdata_player",
+    @thumbnails=[
+        #<YouTubeIt::Model::Thumbnail:0x8a5f0d4
+            @url="http://i.ytimg.com/vi/DCf60INko9E/default.jpg",
+            @height=90,
+            @width=120,
+            @time="00:09:39",
+            @name="default"
+        >,
+        #<YouTubeIt::Model::Thumbnail:0x8a5fe58
+            @url="http://i.ytimg.com/vi/DCf60INko9E/mqdefault.jpg",
+            @height=180,
+            @width=320,
+            @time=nil,
+            @name="mqdefault"
+        >,
+        #<YouTubeIt::Model::Thumbnail:0x8a5fbec
+            @url="http://i.ytimg.com/vi/DCf60INko9E/hqdefault.jpg",
+            @height=360,
+            @width=480,
+            @time=nil,
+            @name="hqdefault"
+        >,
+        #<YouTubeIt::Model::Thumbnail:0x8a5f930
+            @url="http://i.ytimg.com/vi/DCf60INko9E/sddefault.jpg",
+            @height=480,
+            @width=640,
+            @time=nil,
+            @name="sddefault"
+        >,
+        #<YouTubeIt::Model::Thumbnail:0x8a5f6b0
+            @url="http://i.ytimg.com/vi/DCf60INko9E/1.jpg",
+            @height=90,
+            @width=120,
+            @time="00:04:49.500",
+            @name="start"
+        >,
+        #<YouTubeIt::Model::Thumbnail:0x8a5f28c
+            @url="http://i.ytimg.com/vi/DCf60INko9E/2.jpg",
+            @height=90,
+            @width=120,
+            @time="00:09:39",
+            @name="middle"
+        >,
+        #<YouTubeIt::Model::Thumbnail:0x8a5ef80
+            @url="http://i.ytimg.com/vi/DCf60INko9E/3.jpg",
+            @height=90,
+            @width=120,
+            @time="00:14:28.500",
+            @name="end"
+        >
+    ],
+    @rating=
+        #<YouTubeIt::Model::Rating:0x8a5d1e4
+            @min=1,
+            @max=5,
+            @rater_count=437,
+            @average=3.7551486,
+            @likes=301,
+            @dislikes=136
+        >,
+    @view_count=311506,
+    @favorite_count=0,
+    @comment_count=23,
+    @access_control={"comment"=>"allowed", "commentVote"=>"allowed", "videoRespond"=>"moderated", "rate"=>"allowed", "embed"=>"allowed", "list"=>"allowed", "autoPlay"=>"allowed", "syndicate"=>"allowed"},
+    @widescreen=true,
+    @noembed=false,
+    @safe_search=false,
+    @position=nil,
+    @video_position=nil,
+    @latitude=nil,
+    @longitude=nil,
+    @state=nil,
+    @insight_uri=nil,
+    @unique_id="DCf60INko9E",
+    @raw_content=#<Nokogiri::XML::Element:0x4501e88 name="entry" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> attributes=[#<Nokogiri::XML::Attr:0x4540fe8 name="etag" namespace=#<Nokogiri::XML::Namespace:0x44e0eea prefix="gd" href="http://schemas.google.com/g/2005"> value="W/\"Ak8NSX47eCp7I2A9XRRSGU4.\"">] children=[#<Nokogiri::XML::Element:0x45018fc name="id" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> children=[#<Nokogiri::XML::Text:0x45408f4 "tag:youtube.com,2008:video:DCf60INko9E">]>, #<Nokogiri::XML::Element:0x4501212 name="published" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> children=[#<Nokogiri::XML::Text:0x4540624 "2013-04-01T16:11:06.000Z">]>, #<Nokogiri::XML::Element:0x451184c name="updated" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> children=[#<Nokogiri::XML::Text:0x4540340 "2015-01-22T15:01:38.000Z">]>, #<Nokogiri::XML::Element:0x451033e name="category" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> attributes=[#<Nokogiri::XML::Attr:0x454021e name="scheme" value="http://schemas.google.com/g/2005#kind">, #<Nokogiri::XML::Attr:0x4540214 name="term" value="http://gdata.youtube.com/schemas/2007#video">]>, #<Nokogiri::XML::Element:0x4510302 name="category" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> attributes=[#<Nokogiri::XML::Attr:0x4545e12 name="scheme" value="http://gdata.youtube.com/schemas/2007/categories.cat">, #<Nokogiri::XML::Attr:0x4545e08 name="term" value="Film">, #<Nokogiri::XML::Attr:0x4545dfe name="label" value="Film & Animation">]>, #<Nokogiri::XML::Element:0x4519b6e name="title" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> children=[#<Nokogiri::XML::Text:0x454570a "Crazy penguin HD">]>, #<Nokogiri::XML::Element:0x4545638 name="content" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> attributes=[#<Nokogiri::XML::Attr:0x4545606 name="type" value="application/x-shockwave-flash">, #<Nokogiri::XML::Attr:0x45455fc name="src" value="http://www.youtube.com/v/DCf60INko9E?version=3&f=videos&app=youtube_gdata">]>, #<Nokogiri::XML::Element:0x454519c name="link" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> attributes=[#<Nokogiri::XML::Attr:0x454511a name="rel" value="alternate">, #<Nokogiri::XML::Attr:0x4545110 name="type" value="text/html">, #<Nokogiri::XML::Attr:0x45450de name="href" value="http://www.youtube.com/watch?v=DCf60INko9E&feature=youtube_gdata">]>, #<Nokogiri::XML::Element:0x454451c name="link" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> attributes=[#<Nokogiri::XML::Attr:0x45444e0 name="rel" value="http://gdata.youtube.com/schemas/2007#video.related">, #<Nokogiri::XML::Attr:0x45444d6 name="type" value="application/atom+xml">, #<Nokogiri::XML::Attr:0x45444cc name="href" value="http://gdata.youtube.com/feeds/api/videos/DCf60INko9E/related?v=2.1">]>, #<Nokogiri::XML::Element:0x454ff7a name="link" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> attributes=[#<Nokogiri::XML::Attr:0x454ff16 name="rel" value="http://gdata.youtube.com/schemas/2007#mobile">, #<Nokogiri::XML::Attr:0x454ff0c name="type" value="text/html">, #<Nokogiri::XML::Attr:0x454ff02 name="href" value="http://m.youtube.com/details?v=DCf60INko9E">]>, #<Nokogiri::XML::Element:0x454f962 name="link" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> attributes=[#<Nokogiri::XML::Attr:0x454f926 name="rel" value="http://gdata.youtube.com/schemas/2007#uploader">, #<Nokogiri::XML::Attr:0x454f91c name="type" value="application/atom+xml">, #<Nokogiri::XML::Attr:0x454f912 name="href" value="http://gdata.youtube.com/feeds/api/users/WnuODgzj_sHincK0DL15oA?v=2.1">]>, #<Nokogiri::XML::Element:0x454f3b8 name="link" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> attributes=[#<Nokogiri::XML::Attr:0x454f386 name="rel" value="self">, #<Nokogiri::XML::Attr:0x454f37c name="type" value="application/atom+xml">, #<Nokogiri::XML::Attr:0x454f368 name="href" value="http://gdata.youtube.com/feeds/api/videos/DCf60INko9E?v=2.1">]>, #<Nokogiri::XML::Element:0x451945c name="author" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> children=[#<Nokogiri::XML::Element:0x4518d54 name="name" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> children=[#<Nokogiri::XML::Text:0x454e878 "toddler cartoon">]>, #<Nokogiri::XML::Element:0x4518386 name="uri" namespace=#<Nokogiri::XML::Namespace:0x44e0ef4 href="http://www.w3.org/2005/Atom"> children=[#<Nokogiri::XML::Text:0x454e5d0 "http://gdata.youtube.com/feeds/api/users/WnuODgzj_sHincK0DL15oA">]>, #<Nokogiri::XML::Element:0x454e4fe name="userId" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> children=[#<Nokogiri::XML::Text:0x454e292 "WnuODgzj_sHincK0DL15oA">]>]>, #<Nokogiri::XML::Element:0x4539a36 name="accessControl" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x4554eda name="action" value="comment">, #<Nokogiri::XML::Attr:0x4554f20 name="permission" value="allowed">]>, #<Nokogiri::XML::Element:0x45399f0 name="accessControl" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x4555b00 name="action" value="commentVote">, #<Nokogiri::XML::Attr:0x4555af6 name="permission" value="allowed">]>, #<Nokogiri::XML::Element:0x4539932 name="accessControl" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x4555380 name="action" value="videoRespond">, #<Nokogiri::XML::Attr:0x4555376 name="permission" value="moderated">]>, #<Nokogiri::XML::Element:0x453987e name="accessControl" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x4554e8a name="action" value="rate">, #<Nokogiri::XML::Attr:0x4554e80 name="permission" value="allowed">]>, #<Nokogiri::XML::Element:0x45397e8 name="accessControl" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x455489a name="action" value="embed">, #<Nokogiri::XML::Attr:0x4554890 name="permission" value="allowed">]>, #<Nokogiri::XML::Element:0x453972a name="accessControl" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x45542dc name="action" value="list">, #<Nokogiri::XML::Attr:0x45542d2 name="permission" value="allowed">]>, #<Nokogiri::XML::Element:0x453969e name="accessControl" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x455de5e name="action" value="autoPlay">, #<Nokogiri::XML::Attr:0x455de54 name="permission" value="allowed">]>, #<Nokogiri::XML::Element:0x4539630 name="accessControl" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x455d922 name="action" value="syndicate">, #<Nokogiri::XML::Attr:0x455d918 name="permission" value="allowed">]>, #<Nokogiri::XML::Element:0x455d328 name="comments" namespace=#<Nokogiri::XML::Namespace:0x44e0eea prefix="gd" href="http://schemas.google.com/g/2005"> children=[#<Nokogiri::XML::Element:0x4539ea0 name="feedLink" namespace=#<Nokogiri::XML::Namespace:0x44e0eea prefix="gd" href="http://schemas.google.com/g/2005"> attributes=[#<Nokogiri::XML::Attr:0x455cfb8 name="rel" value="http://gdata.youtube.com/schemas/2007#comments">, #<Nokogiri::XML::Attr:0x455cfae name="href" value="http://gdata.youtube.com/feeds/api/videos/DCf60INko9E/comments?v=2.1">, #<Nokogiri::XML::Attr:0x455cf9a name="countHint" value="23">]>]>, #<Nokogiri::XML::Element:0x455c450 name="hd" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007">>, #<Nokogiri::XML::Element:0x4521f08 name="group" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> children=[#<Nokogiri::XML::Element:0x456271a name="category" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x456268e name="label" value="Film & Animation">, #<Nokogiri::XML::Attr:0x4562652 name="scheme" value="http://gdata.youtube.com/schemas/2007/categories.cat">] children=[#<Nokogiri::XML::Text:0x456d692 "Film">]>, #<Nokogiri::XML::Element:0x4524ea6 name="content" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x456d41c name="url" value="http://www.youtube.com/v/DCf60INko9E?version=3&f=videos&app=youtube_gdata">, #<Nokogiri::XML::Attr:0x456d3e0 name="type" value="application/x-shockwave-flash">, #<Nokogiri::XML::Attr:0x456d39a name="medium" value="video">, #<Nokogiri::XML::Attr:0x456d37c name="isDefault" value="true">, #<Nokogiri::XML::Attr:0x456d372 name="expression" value="full">, #<Nokogiri::XML::Attr:0x456d368 name="duration" value="1158">, #<Nokogiri::XML::Attr:0x456d336 name="format" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="5">]>, #<Nokogiri::XML::Element:0x4524be0 name="content" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x4577e9e name="url" value="rtsp://r8---sn-4g57kuee.c.youtube.com/CiILENy73wIaGQnRo2SD0PonDBMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp">, #<Nokogiri::XML::Attr:0x4577e6c name="type" value="video/3gpp">, #<Nokogiri::XML::Attr:0x4577e26 name="medium" value="video">, #<Nokogiri::XML::Attr:0x4577df4 name="expression" value="full">, #<Nokogiri::XML::Attr:0x4577dd6 name="duration" value="1158">, #<Nokogiri::XML::Attr:0x4577d9a name="format" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="1">]>, #<Nokogiri::XML::Element:0x4524910 name="content" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x457b260 name="url" value="rtsp://r8---sn-4g57kuee.c.youtube.com/CiILENy73wIaGQnRo2SD0PonDBMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp">, #<Nokogiri::XML::Attr:0x457b24c name="type" value="video/3gpp">, #<Nokogiri::XML::Attr:0x457b242 name="medium" value="video">, #<Nokogiri::XML::Attr:0x457b206 name="expression" value="full">, #<Nokogiri::XML::Attr:0x457b1c0 name="duration" value="1158">, #<Nokogiri::XML::Attr:0x457b198 name="format" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="6">]>, #<Nokogiri::XML::Element:0x457e460 name="credit" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x457e384 name="role" value="uploader">, #<Nokogiri::XML::Attr:0x457e35c name="scheme" value="urn:youtube">, #<Nokogiri::XML::Attr:0x457e302 name="display" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="toddler cartoon">] children=[#<Nokogiri::XML::Text:0x4582e84 "WnuODgzj_sHincK0DL15oA">]>, #<Nokogiri::XML::Element:0x452124c name="description" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x4582a2e name="type" value="plain">] children=[#<Nokogiri::XML::Text:0x458209c "Story about some crazy and funny penguins.">]>, #<Nokogiri::XML::Element:0x4595f20 name="keywords" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/">>, #<Nokogiri::XML::Element:0x4595a16 name="license" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x45959bc name="type" value="text/html">, #<Nokogiri::XML::Attr:0x45959b2 name="href" value="http://www.youtube.com/t/terms">] children=[#<Nokogiri::XML::Text:0x4595444 "youtube">]>, #<Nokogiri::XML::Element:0x4520252 name="player" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x4595282 name="url" value="http://www.youtube.com/watch?v=DCf60INko9E&feature=youtube_gdata_player">]>, #<Nokogiri::XML::Element:0x452e780 name="thumbnail" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x4594468 name="url" value="http://i.ytimg.com/vi/DCf60INko9E/default.jpg">, #<Nokogiri::XML::Attr:0x459445e name="height" value="90">, #<Nokogiri::XML::Attr:0x4594454 name="width" value="120">, #<Nokogiri::XML::Attr:0x4594440 name="time" value="00:09:39">, #<Nokogiri::XML::Attr:0x4594436 name="name" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="default">]>, #<Nokogiri::XML::Element:0x452ffa4 name="thumbnail" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x459f8b8 name="url" value="http://i.ytimg.com/vi/DCf60INko9E/mqdefault.jpg">, #<Nokogiri::XML::Attr:0x459f886 name="height" value="180">, #<Nokogiri::XML::Attr:0x459f87c name="width" value="320">, #<Nokogiri::XML::Attr:0x459f84a name="name" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="mqdefault">]>, #<Nokogiri::XML::Element:0x452fe6e name="thumbnail" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x45ad652 name="url" value="http://i.ytimg.com/vi/DCf60INko9E/hqdefault.jpg">, #<Nokogiri::XML::Attr:0x45ad62a name="height" value="360">, #<Nokogiri::XML::Attr:0x45ad60c name="width" value="480">, #<Nokogiri::XML::Attr:0x45ad5e4 name="name" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="hqdefault">]>, #<Nokogiri::XML::Element:0x452fd24 name="thumbnail" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x45bb8d8 name="url" value="http://i.ytimg.com/vi/DCf60INko9E/sddefault.jpg">, #<Nokogiri::XML::Attr:0x45bb8ce name="height" value="480">, #<Nokogiri::XML::Attr:0x45bb874 name="width" value="640">, #<Nokogiri::XML::Attr:0x45bb7fc name="name" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="sddefault">]>, #<Nokogiri::XML::Element:0x452fbd0 name="thumbnail" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x45c5766 name="url" value="http://i.ytimg.com/vi/DCf60INko9E/1.jpg">, #<Nokogiri::XML::Attr:0x45c5752 name="height" value="90">, #<Nokogiri::XML::Attr:0x45c573e name="width" value="120">, #<Nokogiri::XML::Attr:0x45c56da name="time" value="00:04:49.500">, #<Nokogiri::XML::Attr:0x45c56c6 name="name" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="start">]>, #<Nokogiri::XML::Element:0x452fa04 name="thumbnail" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x45cd272 name="url" value="http://i.ytimg.com/vi/DCf60INko9E/2.jpg">, #<Nokogiri::XML::Attr:0x45cd254 name="height" value="90">, #<Nokogiri::XML::Attr:0x45cd236 name="width" value="120">, #<Nokogiri::XML::Attr:0x45cd218 name="time" value="00:09:39">, #<Nokogiri::XML::Attr:0x45cd1fa name="name" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="middle">]>, #<Nokogiri::XML::Element:0x452f838 name="thumbnail" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x45d4eaa name="url" value="http://i.ytimg.com/vi/DCf60INko9E/3.jpg">, #<Nokogiri::XML::Attr:0x45d4e5a name="height" value="90">, #<Nokogiri::XML::Attr:0x45d4e50 name="width" value="120">, #<Nokogiri::XML::Attr:0x45d4e32 name="time" value="00:14:28.500">, #<Nokogiri::XML::Attr:0x45d4e1e name="name" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> value="end">]>, #<Nokogiri::XML::Element:0x45e118c name="title" namespace=#<Nokogiri::XML::Namespace:0x44e0ecc prefix="media" href="http://search.yahoo.com/mrss/"> attributes=[#<Nokogiri::XML::Attr:0x45e1150 name="type" value="plain">] children=[#<Nokogiri::XML::Text:0x45e0d2c "Crazy penguin HD">]>, #<Nokogiri::XML::Element:0x4525a86 name="aspectRatio" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> children=[#<Nokogiri::XML::Text:0x45e0976 "widescreen">]>, #<Nokogiri::XML::Element:0x4520a54 name="duration" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x45e0872 name="seconds" value="1158">]>, #<Nokogiri::XML::Element:0x4500448 name="uploaded" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> children=[#<Nokogiri::XML::Text:0x45e02b4 "2013-04-01T16:11:06.000Z">]>, #<Nokogiri::XML::Element:0x45e01e2 name="uploaderId" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> children=[#<Nokogiri::XML::Text:0x45e7f50 "UCWnuODgzj_sHincK0DL15oA">]>, #<Nokogiri::XML::Element:0x4521a4e name="videoid" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> children=[#<Nokogiri::XML::Text:0x45e7c44 "DCf60INko9E">]>]>, #<Nokogiri::XML::Element:0x452f342 name="rating" namespace=#<Nokogiri::XML::Namespace:0x44e0eea prefix="gd" href="http://schemas.google.com/g/2005"> attributes=[#<Nokogiri::XML::Attr:0x45e7a50 name="average" value="3.7551486">, #<Nokogiri::XML::Attr:0x45e7a3c name="max" value="5">, #<Nokogiri::XML::Attr:0x45e7a32 name="min" value="1">, #<Nokogiri::XML::Attr:0x45e7a28 name="numRaters" value="437">, #<Nokogiri::XML::Attr:0x45e7a1e name="rel" value="http://schemas.google.com/g/2005#overall">]>, #<Nokogiri::XML::Element:0x452e2e4 name="statistics" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x45e6b96 name="favoriteCount" value="0">, #<Nokogiri::XML::Attr:0x45e6b8c name="viewCount" value="311506">]>, #<Nokogiri::XML::Element:0x452ee1a name="rating" namespace=#<Nokogiri::XML::Namespace:0x44e0ed6 prefix="yt" href="http://gdata.youtube.com/schemas/2007"> attributes=[#<Nokogiri::XML::Attr:0x45e65ec name="numDislikes" value="136">, #<Nokogiri::XML::Attr:0x45e65c4 name="numLikes" value="301">]>]>,
+    @perm_private=false
+>

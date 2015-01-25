@@ -1,0 +1,9 @@
+source "https://rubygems.org"
+
+gem 'sinatra', git: 'git@github.com:sinatra/sinatra.git'
+gem 'sinatra-partial'
+gem 'rspec'
+gem 'rack-test'
+gem 'activesupport'
+gem 'rest-client'
+gem 'youtube_it'
