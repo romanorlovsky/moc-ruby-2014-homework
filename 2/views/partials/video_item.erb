@@ -1,4 +1,4 @@
-<% if video.thumbnail %>
+<% unless video.thumbnail.empty? %>
     <p><img src="<%= video.thumbnail %>"></p>
 <% end %>
 
@@ -11,6 +11,6 @@
   <li>Description: <%= video.description %></li>
   <li>Duration: <%= video.duration %></li>
   <li>Viewed: <%= video.view_count %></li>
-  <li>Rating: <%= '%.2f' % video.rating %></li>
-  <li>Categories: <%= video.categories.join(', ') %></li>
+  <li>Rating: <%= video.rating_descr %></li>
+  <li>Categories: <%= video.categories %></li>
 </ul>
