@@ -1,5 +1,3 @@
-require 'youtube_it'
-
 class YouTubeSearch
 
   def self.search(params)
@@ -11,32 +9,59 @@ class YouTubeSearch
 
     unless response.max_result_count == 0
 
-      video_struct = Struct.new("Video", :title, :published_at, :description, :author, :duration, :url, :view_count, :rating, :categories, :thumbnail)
+      video_struct = Struct.new("Video", :title, :published_at, :description, :author, :duration, :url, :view_count, :rating, :rating_descr, :categories, :thumbnail)
+
+      video_struct.class_eval do
+        def to_map
+          map = Hash.new
+          self.members.each { |m| map[m] = self[m] }
+          map
+        end
+
+        def to_json(*a)
+          to_map.to_json(*a)
+        end
+      end
 
       response.videos.each do |video|
 
-        puts video.inspect
-
         single_video = video_struct.new(
-            video.title,
-            video.published_at,
-            video.description,
-            video.author.name,
-            Time.at(video.duration).utc.strftime("%H:%M:%S"),
-            video.player_url,
-            video.view_count,
-            video.rating.average.round(2),
-            [],
+            video.instance_variable_defined?("@title") ? video.title : '',
+            video.instance_variable_defined?("@published_at") ? video.published_at.to_s : '',
+            video.instance_variable_defined?("@description") ? video.description : '',
+            if video.instance_variable_defined?("@author")
+              video.author.instance_variable_defined?("@name") ? video.author.name : ''
+            else
+              ''
+            end,
+            video.instance_variable_defined?("@duration") ? Time.at(video.duration).utc.strftime("%H:%M:%S").to_s : '',
+            video.instance_variable_defined?("@player_url") ? video.player_url : '',
+            video.instance_variable_defined?("@view_count") ? ActiveSupport::NumberHelper::number_to_delimited(video.view_count) : '',
+            if video.instance_variable_defined?("@rating")
+              video.rating.instance_variable_defined?("@average") ? video.rating.average.round(2) : ''
+            else
+              ''
+            end,
+            if video.instance_variable_defined?("@rating")
+              rating = video.rating.instance_variable_defined?("@average") ? video.rating.average.round(2).to_s : ''
+
+              if video.rating.instance_variable_defined?("@max")
+                rating << ' of ' << video.rating.max.to_s
+              else
+                rating
+              end
+            else
+              ''
+            end,
+            '',
             ''
         )
 
-        if video.categories.length > 0
-          video.categories.each do |category|
-            single_video.categories.push category.label
-          end
+        if video.instance_variable_defined?("@categories") && video.categories.length > 0
+          single_video.categories = video.categories.collect { |category| category.label }.join(',')
         end
 
-        if video.thumbnails.length > 0
+        if video.instance_variable_defined?("@thumbnails") && video.thumbnails.length > 0
           video.thumbnails.each do |thumbnail|
             next if thumbnail.name != 'default'
 

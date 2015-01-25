@@ -2,7 +2,10 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
 
-require 'sinatra/partial'
+require 'active_support'
+require 'youtube_it'
+require 'json'
+require 'json/add/core'
 
 set :partial_template_engine, :erb
 
