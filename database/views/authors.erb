@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Authors</title>
+</head>
+<body>
+<div class="container">
+
+  <ul>
+    <% authors.each do |author| %>
+        <li>
+          <a href="<%= url('/authors/' << author.user_name) %>"><%= author.name %></a>
+        </li>
+    <% end %>
+  </ul>
+
+</div>
+</body>
+</html>

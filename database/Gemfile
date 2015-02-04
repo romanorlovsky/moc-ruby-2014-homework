@@ -1,0 +1,11 @@
+source "https://rubygems.org"
+
+gem 'sinatra', git: 'git@github.com:sinatra/sinatra.git'
+gem 'sinatra-partial'
+gem 'activesupport'
+gem "activerecord"
+gem "mysql2"
+gem "active_record_migrations"
+gem "sinatra-reloader"
+gem "faker"
+gem "fabrication"

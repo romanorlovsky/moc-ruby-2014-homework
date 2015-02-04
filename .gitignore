@@ -36,3 +36,5 @@ build/
 .rvmrc
 
 2/Gemfile.lock
+database/Gemfile.lock
+database/db/config.yml
