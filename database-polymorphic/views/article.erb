@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Article <%= article.title %></title>
+</head>
+<body>
+<div class="container">
+  <a href="<%= url('/authors/' << article.author.user_name << '/articles') %>"><< Back</a>
+
+  <h1><%= article.title %></h1>
+  <p><b>Created at:</b> <%= article.created_at %></p>
+  <p><b>Content:</b> <%= article.content %></p>
+
+  <ul>
+    <% article.comments.each do |comment| %>
+        <li>
+          <p><b>Created at:</b> <%= comment.created_at %></p>
+          <p><b>Content:</b> <%= comment.content %></p>
+        </li>
+    <% end %>
+  </ul>
+
+</div>
+</body>
+</html>

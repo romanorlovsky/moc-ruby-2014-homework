@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video <%= video.title %></title>
+</head>
+<body>
+<div class="container">
+  <a href="<%= url('/authors/' << video.author.user_name << '/videos') %>"><< Back</a>
+
+  <h1><%= video.title %></h1>
+  <p><a href="<%= video.url %>" target="_blank">Source</a></p>
+  <p><b>Created at:</b> <%= video.created_at %></p>
+  <p><b>Description:</b> <%= video.description %></p>
+
+  <ul>
+    <% video.comments.each do |comment| %>
+        <li>
+          <p><b>Created at:</b> <%= comment.created_at %></p>
+          <p><b>Content:</b> <%= comment.content %></p>
+        </li>
+    <% end %>
+  </ul>
+
+</div>
+</body>
+</html>
