@@ -1,0 +1,4 @@
+<h1> Create new article </h1>
+<% form_for article, "/articles", method: :post do |f| %>
+    <%= partial "article_form", locals: {article: article, authors: authors, f: f} %>
+<% end %>

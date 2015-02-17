@@ -1,37 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Author videos</title>
-</head>
-<body>
-<div class="container">
+<%= link_to 'Back', "/" %>
+<br>
+<%= link_to 'Create new video', "/videos/new" %>
 
-  <a href="<%= url('/') %>"><< Home</a>
+<h1><%= author.name %></h1>
 
-  <h1><%= author.name %></h1>
+<p><strong>Email:</strong> <%= author.email %></p>
 
-  <p><strong>Email:</strong> <%= author.email %></p>
+<p><strong>Age:</strong> <%= author.age %></p>
 
-  <p><strong>Age:</strong> <%= author.age %></p>
+<p><strong>Website:</strong> <%= author.website %></p>
 
-  <p><strong>Website:</strong> <%= author.website %></p>
+<p><strong>Videos:</strong></p>
 
-  <p><strong>Videos:</strong></p>
-
-  <ul>
-    <% author.videos.each do |video| %>
-        <li>
-          <p>
-            <a href="<%= url('/video/' << video.slug) %>"><%= video.title %></a>
-          </p>
-          <ul>
-            <li>Created at: <%= video.created_at %></li>
-            <li>Comments: <%= video.comments_count %></li>
-          </ul>
-        </li>
-    <% end %>
-  </ul>
-
-</div>
-</body>
-</html>
+<ul>
+  <% author.videos.each do |video| %>
+      <li>
+        <p>
+          <%= link_to video.title, "/video/#{video.slug}" %>
+          <% form_for video, "/videos/#{video.id}", method: :delete do |f| %>
+              <%= f.submit("Delete", "/videos/#{video.id}") %>
+              <%= link_to("Edit", "/videos/#{video.id}/edit") %>
+          <% end %>
+        </p>
+        <ul>
+          <li>Created at: <%= video.created_at %></li>
+          <li>Comments: <%= video.comments_count %></li>
+        </ul>
+      </li>
+  <% end %>
+</ul>

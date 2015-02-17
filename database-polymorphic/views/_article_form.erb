@@ -1,0 +1,17 @@
+<%= f.error_messages %>
+<%= f.text_field_block :title %>
+<%= f.text_field_block :slug %>
+<%= f.select_block :author_id, :collection => authors, :fields => [:name, :id], :include_blank => 'None' %>
+<%= f.text_area_block :content %>
+<% if article.created_at %>
+    <%= f.text_field_block :created_at %>
+<% end %>
+<% if article.updated_at %>
+    <%= f.text_field_block :updated_at %>
+<% end %>
+<%= f.submit "Save" %>
+<% if article.author %>
+    <%= link_to "Back", "/authors/#{article.author.user_name}/articles" %>
+<% else %>
+    <%= link_to "Back", "/authors" %>
+<% end %>

@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Article <%= article.title %></title>
-</head>
-<body>
-<div class="container">
-  <a href="<%= url('/authors/' << article.author.user_name << '/articles') %>"><< Back</a>
+<%= link_to 'Back', "/authors/#{article.author.user_name}/videos" %>
+<% form_for article, "/articles/#{article.id}", method: :delete do |f| %>
+    <%= f.submit("Delete", "/articles/#{article.id}") %>
+    <%= link_to("Edit", "/articles/#{article.id}/edit") %>
+<% end %>
+<h1><%= article.title %></h1>
+<p><b>Created at:</b> <%= article.created_at %></p>
+<p><b>Content:</b> <%= article.content %></p>
+<p><b>Comments:</b></p>
+<ul>
+  <% article.comments.each do |comment| %>
+      <li>
+        <p><b>Created at:</b> <%= comment.created_at %></p>
 
-  <h1><%= article.title %></h1>
-  <p><b>Created at:</b> <%= article.created_at %></p>
-  <p><b>Content:</b> <%= article.content %></p>
-
-  <ul>
-    <% article.comments.each do |comment| %>
-        <li>
-          <p><b>Created at:</b> <%= comment.created_at %></p>
-          <p><b>Content:</b> <%= comment.content %></p>
-        </li>
-    <% end %>
-  </ul>
-
-</div>
-</body>
-</html>
+        <p><b>Content:</b> <%= comment.content %></p>
+      </li>
+  <% end %>
+</ul>

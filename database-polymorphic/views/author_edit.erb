@@ -1,0 +1,4 @@
+<h1> Edit author </h1>
+<% form_for author, "/authors/#{author.id}", method: :put do |f| %>
+    <%= partial "author_form", locals: {author: author, f: f} %>
+<% end %>

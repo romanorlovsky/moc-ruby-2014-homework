@@ -1,37 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Author articles</title>
-</head>
-<body>
-<div class="container">
+<%= link_to 'Back', "/" %>
+<br>
+<%= link_to 'Create new article', "/articles/new" %>
 
-  <a href="<%= url('/') %>"><< Home</a>
+<h1><%= author.name %></h1>
 
-  <h1><%= author.name %></h1>
+<p><strong>Email:</strong> <%= author.email %></p>
 
-  <p><strong>Email:</strong> <%= author.email %></p>
+<p><strong>Age:</strong> <%= author.age %></p>
 
-  <p><strong>Age:</strong> <%= author.age %></p>
+<p><strong>Website:</strong> <%= author.website %></p>
 
-  <p><strong>Website:</strong> <%= author.website %></p>
+<p><strong>Articles:</strong></p>
 
-  <p><strong>Articles:</strong></p>
-
-  <ul>
-    <% author.articles.each do |article| %>
-        <li>
-          <p>
-            <a href="<%= url('/article/' << article.slug) %>"><%= article.title %></a>
-          </p>
-          <ul>
-            <li>Created at: <%= article.created_at %></li>
-            <li>Comments: <%= article.comments_count %></li>
-          </ul>
-        </li>
-    <% end %>
-  </ul>
-
-</div>
-</body>
-</html>
+<ul>
+  <% author.articles.each do |article| %>
+      <li>
+        <p>
+          <%= link_to article.title, "/article/#{article.slug}" %>
+          <% form_for article, "/articles/#{article.id}", method: :delete do |f| %>
+              <%= f.submit("Delete", "/articles/#{article.id}") %>
+              <%= link_to("Edit", "/articles/#{article.id}/edit") %>
+          <% end %>
+        </p>
+        <ul>
+          <li>Created at: <%= article.created_at %></li>
+          <li>Comments: <%= article.comments_count %></li>
+        </ul>
+      </li>
+  <% end %>
+</ul>

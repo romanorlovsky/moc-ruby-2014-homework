@@ -5,6 +5,7 @@ ActiveRecord::Base.establish_connection @config
 class Author < ActiveRecord::Base
   has_many :videos
   has_many :articles
+  paginates_per 5
 end
 
 class Video < ActiveRecord::Base

@@ -1,0 +1,4 @@
+<h1> Edit video </h1>
+<% form_for video, "/videos/#{video.id}", method: :put do |f| %>
+    <%= partial "video_form", locals: {video: video, authors: authors, f: f} %>
+<% end %>

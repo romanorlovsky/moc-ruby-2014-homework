@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Authors</title>
-</head>
-<body>
-<div class="container">
-
-  <ul>
-    <% authors.each do |author| %>
-        <li>
-          <%= author.name %> (<a href="<%= url('/authors/' << author.user_name << '/videos') %>">videos</a>: <%= author.videos_count %>,
-          <a href="<%= url('/authors/' << author.user_name << '/articles') %>">articles</a>: <%= author.articles_count %>)
-        </li>
-    <% end %>
-  </ul>
-
-</div>
-</body>
-</html>
+<ul>
+  <% authors.each do |author| %>
+      <li>
+        <%= author.name %>
+        (<%= link_to 'videos', "/authors/#{author.user_name}/videos" %>: <%= author.videos_count %>,
+        <%= link_to 'articles', "/authors/#{author.user_name}/articles" %>: <%= author.articles_count %>)
+        <% form_for author, "/authors/#{author.id}", method: :delete do |f| %>
+            <%= f.submit("Delete", "/authors/#{author.id}") %>
+            <%= link_to("Edit", "/authors/#{author.id}/edit") %>
+        <% end %>
+      </li>
+  <% end %>
+</ul>

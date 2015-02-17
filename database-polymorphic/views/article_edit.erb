@@ -1,0 +1,4 @@
+<h1> Edit article </h1>
+<% form_for article, "/articles/#{article.id}", method: :put do |f| %>
+    <%= partial "article_form", locals: {article: article, authors: authors, f: f} %>
+<% end %>

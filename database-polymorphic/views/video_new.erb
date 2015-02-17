@@ -1,0 +1,4 @@
+<h1> Create new video </h1>
+<% form_for video, "/videos", method: :post do |f| %>
+    <%= partial "video_form", locals: {video: video, authors: authors, f: f} %>
+<% end %>
